@@ -1,0 +1,42 @@
+<!DOCTYPE html> <html> 
+<script> var = WoodGatherButton = document.GetElementById("WoodGatherButton") var var if (StartButton.style.display = "none") { WoodGatherButton.visibility: visible; } else { WoodGatherButton.visibility: hidden; } 
+</script> 
+
+<style> 
+p { color: #FFFFFF; font-family: "Helvetica"; } 
+
+h1 { color: #FFFFFF; font-family: "Helvetica"; } 
+
+h2 { color: #FFFFFF; font-family: "Helvetica"; } 
+
+h3 { color: #FFFFFF;px font-family: "Helvetica"; } 
+
+body { background-color: #000000; } 
+
+.button { background-color: #000000; border-color: #FFFFFF; font-family:"Helvetica"; color: #FFFFFF; } 
+
+.startbutton { width: 250px; height: 50px; font-size: 25px; display: flex; align-items: center; justify-content: center; } 
+
+.mainmenu { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; } 
+
+.relative1 { position: relative; margin: 0 auto; } 
+
+.absolute1 { position: absolute; left: -500px; bottom: -700px; } 
+
+.GatherButtons { width: 150px; height: 75px; font-size: 25px; } 
+
+.hiddenButtonReveal { display: none; } 
+
+</style> 
+
+<script> function startbutton() { var StartButton = document.getElementById("startbutton"); var StartText = document.getElementById("starttext"); var WoodGatherButton = document.getElementById("WoodGatherButton"); StartButton.style.display = "none"; StartText.style.display= "none"; WoodGatherButton.classList.remove('hiddenButtonReveal'); } 
+
+</script> 
+
+<body class="mainmenu"> 
+
+<h2 id="starttext">Laboring Lodge</h2> 
+
+<button id="startbutton" onclick="startbutton()" class="button startbutton">Start</button> 
+
+<div class="relative1"> <div class="absolute1"> <button id="WoodGatherButton" onclick"GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> </div> </div> </body> </html> why is the GatherWood button not appearing
