@@ -30,7 +30,12 @@ body { background-color: #000000; }
 </style> 
 
 <script> function startbutton() { var StartButton = document.getElementById("startbutton"); var StartText = document.getElementById("starttext"); var WoodGatherButton = document.getElementById("WoodGatherButton"); StartButton.style.display = "none"; StartText.style.display= "none"; WoodGatherButton.classList.remove('hiddenButtonReveal'); } 
+function gatherWoodEnable() {
 
+var gatherWoodTimer = 10
+
+
+}
 </script> 
 
 <body class="mainmenu"> 
