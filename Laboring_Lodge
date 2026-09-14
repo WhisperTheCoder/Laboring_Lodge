@@ -39,4 +39,4 @@ body { background-color: #000000; }
 
 <button id="startbutton" onclick="startbutton()" class="button startbutton">Start</button> 
 
-<div class="relative1"> <div class="absolute1"> <button id="WoodGatherButton" onclick"GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> </div> </div> </body> </html> why is the GatherWood button not appearing
+<div class="relative1"> <div class="absolute1"> <button id="WoodGatherButton" onclick"GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> </div> </div> </body> </html> 
