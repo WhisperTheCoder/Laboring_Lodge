@@ -1,0 +1,2 @@
+Hello! I've had the concept of a survival text-based game for a while. At the time of writing, I'm excited to see where the project leads me. 
+I have little to no experience with CSS, HTML, or JavaScript, but I'm excited to start and keep up my work ethic.
