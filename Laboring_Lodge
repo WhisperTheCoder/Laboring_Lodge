@@ -58,6 +58,16 @@ margin: 0 auto;
 position: absolute;
 left: -500px;
 bottom: -700px; 
+}
+.relative2 {
+position: relative;
+margin: 0 auto; 
+} 
+
+.absolute2 {
+position: absolute;
+left: -500px;
+bottom: -500px; 
 } 
 
 .GatherButtons {
@@ -76,15 +86,39 @@ display: none;
 
 var StartButton = document.getElementById("startbutton"); 
 var StartText = document.getElementById("starttext"); 
-var WoodGatherButton = document.getElementById("WoodGatherButton"); 
+var WoodGatherButton = document.getElementById("WoodGatherButton");
+var Wood = 0;
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
 WoodGatherButton.classList.remove('hiddenButtonReveal'); 
 
 } 
-
 </script> 
+<script>
+let Wood = 0; 
+let timeLeft = 5; 
 
+function GatherWood() {
+  const WoodGatherButton = document.getElementById('WoodGatherButton');
+  WoodGatherButton.disabled = true;
+  
+  timeLeft = 5; 
+  WoodGatherButton.textContent = timeLeft;
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    if (timeLeft > 0) {
+      WoodGatherButton.textContent = timeLeft;
+    } else {
+      clearInterval(timer);
+      Wood += 1;
+      WoodGatherButton.textContent = 'Gather Wood';
+      WoodGatherButton.disabled = false;
+    }
+  }, 1000);
+}
+
+</script>
 <body class="mainmenu"> 
 
 <h2 id="starttext">Laboring Lodge</h2> 
@@ -92,5 +126,5 @@ WoodGatherButton.classList.remove('hiddenButtonReveal');
 <button id="startbutton" onclick="startbutton()" class="button startbutton">Start</button> 
 
 <div class="relative1"> <div class="absolute1"> 
-<button id="WoodGatherButton" onclick"GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
+<button id="WoodGatherButton" onclick="GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
 </div> </div> </body> </html> 
