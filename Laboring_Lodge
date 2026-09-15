@@ -66,8 +66,8 @@ margin: 0 auto;
 
 .absolute2 {
 position: absolute;
-left: -500px;
-bottom: -500px; 
+left: -490px;
+bottom: -600px; 
 } 
 
 .GatherButtons {
@@ -79,19 +79,18 @@ font-size: 25px;
 .hiddenButtonReveal {
 display: none; 
 } 
-
 </style> 
 
 <script> function startbutton() {
-
 var StartButton = document.getElementById("startbutton"); 
 var StartText = document.getElementById("starttext"); 
 var WoodGatherButton = document.getElementById("WoodGatherButton");
 var Wood = 0;
+var WoodGathered =  document.getElementById("WoodGathered");
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
-WoodGatherButton.classList.remove('hiddenButtonReveal'); 
-
+WoodGatherButton.classList.remove('hiddenButtonReveal');
+WoodGathered.classList.remove('hiddenButtonReveal');
 } 
 </script> 
 <script>
@@ -117,14 +116,17 @@ function GatherWood() {
     }
   }, 1000);
 }
-
 </script>
 <body class="mainmenu"> 
 
 <h2 id="starttext">Laboring Lodge</h2> 
 
 <button id="startbutton" onclick="startbutton()" class="button startbutton">Start</button> 
-
+<div class = "relative2">
+<div class = "absolute2">
+<h2 id="WoodGathered" class="hiddenButtonReveal">Wood:</h2>
+</div>
+</div>
 <div class="relative1"> <div class="absolute1"> 
 <button id="WoodGatherButton" onclick="GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
 </div> </div> </body> </html> 
