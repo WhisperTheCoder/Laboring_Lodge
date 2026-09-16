@@ -68,7 +68,28 @@ margin: 0 auto;
 position: absolute;
 left: -490px;
 bottom: -600px; 
+}
+.relative3 {
+position: relative;
+margin: 0 auto; 
 } 
+
+.absolute3 {
+position: absolute;
+left: -300px;
+bottom: -600px; 
+}
+.relative4 {
+position: relative;
+margin: 0 auto; 
+} 
+
+.absolute4 {
+position: absolute;
+left: -300px;
+bottom: -700px; 
+}
+
 
 .GatherButtons {
 width: 150px;
@@ -83,13 +104,17 @@ display: none;
 
 <script> function startbutton() {
 var StartButton = document.getElementById("startbutton"); 
-var StartText = document.getElementById("starttext"); 
+var StartText = document.getElementById("starttext");
+var PeltsGathered = document.getElementById("PeltsGathered");
+var PeltButton = document.getElementById('PeltButton');
 WoodGathered.textContent = `Wood:${Wood}`;
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
 WoodGatherButton.classList.remove('hiddenButtonReveal');
 WoodGathered.classList.remove('hiddenButtonReveal');
-} 
+PeltsGathered.classList.remove('hiddenButtonReveal');
+PeltButton.classList.remove('hiddenButtonReveal');
+}
 </script>
 <script>
 var Wood = 0; 
@@ -127,6 +152,14 @@ function GatherWood() {
 <h2 id="WoodGathered" class="hiddenButtonReveal">Wood:</h2>
 </div>
 </div>
+<div class = "relative3">
+<div class = "absolute3">
+<h2 id="PeltsGathered" class="hiddenButtonReveal">Pelts:</h2>
+</div>
+</div>
+<div class="relative4"><div class="absolute4">
+<button id="PeltButton" onclick="Hunt()" class="button hiddenButtonReveal GatherButtons">Hunt</button>
+</div></div>
 <div class="relative1"> <div class="absolute1"> 
 <button id="WoodGatherButton" onclick="GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
 </div> </div> </body> </html> 
