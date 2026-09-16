@@ -84,21 +84,20 @@ display: none;
 <script> function startbutton() {
 var StartButton = document.getElementById("startbutton"); 
 var StartText = document.getElementById("starttext"); 
-var WoodGatherButton = document.getElementById("WoodGatherButton");
-var Wood = 0;
-var WoodGathered =  document.getElementById("WoodGathered");
+WoodGathered.textContent = `Wood:${Wood}`;
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
 WoodGatherButton.classList.remove('hiddenButtonReveal');
 WoodGathered.classList.remove('hiddenButtonReveal');
 } 
-</script> 
+</script>
 <script>
-let Wood = 0; 
+var Wood = 0; 
 let timeLeft = 5; 
 
 function GatherWood() {
   const WoodGatherButton = document.getElementById('WoodGatherButton');
+  const WoodGathered = document.getElementById('WoodGathered');
   WoodGatherButton.disabled = true;
   
   timeLeft = 5; 
@@ -113,6 +112,7 @@ function GatherWood() {
       Wood += 1;
       WoodGatherButton.textContent = 'Gather Wood';
       WoodGatherButton.disabled = false;
+      WoodGathered.textContent = `Wood:${Wood}`;
     }
   }, 1000);
 }
