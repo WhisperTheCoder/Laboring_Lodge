@@ -148,12 +148,12 @@ let timeLeft = 5;
 var Pelts = 0; 
 
 function Hunt() {
-let timeLeft = 5;
+let timeLeft = 30;
   const PeltButton = document.getElementById('PeltButton');
   const PeltsGathered = document.getElementById('PeltsGathered');
   PeltButton.disabled = true;
   
-  timeLeft = 5; 
+  timeLeft = 30; 
   PeltButton.textContent = timeLeft;
 
   const timer = setInterval(() => {
