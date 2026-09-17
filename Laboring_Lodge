@@ -77,7 +77,7 @@ margin: 0 auto;
 .absolute3 {
 position: absolute;
 left: -300px;
-bottom: -600px; 
+bottom: -580px; 
 }
 .relative4 {
 position: relative;
@@ -87,7 +87,7 @@ margin: 0 auto;
 .absolute4 {
 position: absolute;
 left: -300px;
-bottom: -700px; 
+bottom: -720px; 
 }
 
 
@@ -108,6 +108,7 @@ var StartText = document.getElementById("starttext");
 var PeltsGathered = document.getElementById("PeltsGathered");
 var PeltButton = document.getElementById('PeltButton');
 WoodGathered.textContent = `Wood:${Wood}`;
+PeltsGathered.textContent = `Pelts:${Pelts}`;
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
 WoodGatherButton.classList.remove('hiddenButtonReveal');
@@ -118,9 +119,10 @@ PeltButton.classList.remove('hiddenButtonReveal');
 </script>
 <script>
 var Wood = 0; 
-let timeLeft = 5; 
 
 function GatherWood() {
+
+let timeLeft = 5;
   const WoodGatherButton = document.getElementById('WoodGatherButton');
   const WoodGathered = document.getElementById('WoodGathered');
   WoodGatherButton.disabled = true;
@@ -138,6 +140,32 @@ function GatherWood() {
       WoodGatherButton.textContent = 'Gather Wood';
       WoodGatherButton.disabled = false;
       WoodGathered.textContent = `Wood:${Wood}`;
+    }
+  }, 1000);
+}
+</script>
+<script>
+var Pelts = 0; 
+
+function Hunt() {
+let timeLeft = 5;
+  const PeltButton = document.getElementById('PeltButton');
+  const PeltsGathered = document.getElementById('PeltsGathered');
+  PeltButton.disabled = true;
+  
+  timeLeft = 5; 
+  PeltButton.textContent = timeLeft;
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    if (timeLeft > 0) {
+      PeltButton.textContent = timeLeft;
+    } else {
+      clearInterval(timer);
+      Pelts += 1;
+      PeltButton.textContent = 'Hunt';
+      PeltButton.disabled = false;
+      PeltsGathered.textContent = `Pelts:${Pelts}`;
     }
   }, 1000);
 }
