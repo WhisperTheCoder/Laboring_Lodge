@@ -13,7 +13,7 @@ font-family: 'Pixelify Sans';
 
 h2 {
 color: #FFFFFF;
-font-family: 'Pixelify Sans'; 
+font-family: 'Pixelify Sans';
 } 
 
 h3 {
@@ -30,7 +30,8 @@ background-color: #000000;
 border-color: #FFFFFF;
 font-family:'Pixelify Sans';
 color: #FFFFFF; 
-} 
+}
+
 
 .startbutton {
 width: 250px;
@@ -100,21 +101,33 @@ font-size: 25px;
 .hiddenButtonReveal {
 display: none; 
 } 
-</style> 
+.relative5 {
+position: relative;
+margin: 0 auto; 
+} 
+
+.absolute5 {
+position: absolute;
+left: 600px;
+bottom: -200px; 
+}
+</style>
 
 <script> function startbutton() {
 var StartButton = document.getElementById("startbutton"); 
 var StartText = document.getElementById("starttext");
 var PeltsGathered = document.getElementById("PeltsGathered");
 var PeltButton = document.getElementById('PeltButton');
-WoodGathered.textContent = `Wood:${Wood}`;
-PeltsGathered.textContent = `Pelts:${Pelts}`;
+var CraftingButton = document.getElementById('CraftingButton');
+WoodGathered.textContent = `Wood: ${Wood}`;
+PeltsGathered.textContent = `Pelts: ${Pelts}`;
 StartButton.style.display = "none"; 
 StartText.style.display= "none"; 
 WoodGatherButton.classList.remove('hiddenButtonReveal');
 WoodGathered.classList.remove('hiddenButtonReveal');
 PeltsGathered.classList.remove('hiddenButtonReveal');
 PeltButton.classList.remove('hiddenButtonReveal');
+CraftingButton.classList.remove('hiddenButtonReveal');
 }
 </script>
 <script>
@@ -139,7 +152,7 @@ let timeLeft = 5;
       Wood += 1;
       WoodGatherButton.textContent = 'Gather Wood';
       WoodGatherButton.disabled = false;
-      WoodGathered.textContent = `Wood:${Wood}`;
+      WoodGathered.textContent = `Wood: ${Wood}`;
     }
   }, 1000);
 }
@@ -165,7 +178,7 @@ let timeLeft = 10;
       Pelts += 1;
       PeltButton.textContent = 'Hunt';
       PeltButton.disabled = false;
-      PeltsGathered.textContent = `Pelts:${Pelts}`;
+      PeltsGathered.textContent = `Pelts: ${Pelts}`;
     }
   }, 1000);
 }
@@ -187,6 +200,9 @@ let timeLeft = 10;
 </div>
 <div class="relative4"><div class="absolute4">
 <button id="PeltButton" onclick="Hunt()" class="button hiddenButtonReveal GatherButtons">Hunt</button>
+</div></div>
+<div class="relative5"><div class="absolute5">
+<button id="CraftingButton" onclick="CraftOpen()" class="hiddenButtonReveal button GatherButtons">Crafting</button>
 </div></div>
 <div class="relative1"> <div class="absolute1"> 
 <button id="WoodGatherButton" onclick="GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
