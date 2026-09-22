@@ -68,7 +68,7 @@ margin: 0 auto;
 .absolute2 {
 position: absolute;
 left: -490px;
-bottom: -600px; 
+bottom: -680px; 
 }
 .relative3 {
 position: relative;
@@ -78,7 +78,7 @@ margin: 0 auto;
 .absolute3 {
 position: absolute;
 left: -300px;
-bottom: -580px; 
+bottom: -660px; 
 }
 .relative4 {
 position: relative;
@@ -88,7 +88,7 @@ margin: 0 auto;
 .absolute4 {
 position: absolute;
 left: -300px;
-bottom: -720px; 
+bottom: -740px; 
 }
 
 
@@ -119,6 +119,7 @@ var StartText = document.getElementById("starttext");
 var PeltsGathered = document.getElementById("PeltsGathered");
 var PeltButton = document.getElementById('PeltButton');
 var CraftingButton = document.getElementById('CraftingButton');
+var ExitCraftingButton = document.getElementById('ExitCraftingButton');
 WoodGathered.textContent = `Wood: ${Wood}`;
 PeltsGathered.textContent = `Pelts: ${Pelts}`;
 StartButton.style.display = "none"; 
@@ -183,6 +184,28 @@ let timeLeft = 10;
   }, 1000);
 }
 </script>
+<script>
+function OpenCraftingMenu() {
+	CraftingButton.classList.add('hiddenButtonReveal');
+    PeltsGathered.classList.add('hiddenButtonReveal');
+    PeltButton.classList.add('hiddenButtonReveal');
+    WoodGatherButton.classList.add('hiddenButtonReveal');
+    WoodGathered.classList.add('hiddenButtonReveal');
+    ExitCraftingButton.classList.remove('hiddenButtonReveal');
+}
+</script>
+
+<script>
+function CloseCraftingMenu() {
+	CraftingButton.classList.remove('hiddenButtonReveal');
+    PeltsGathered.classList.remove('hiddenButtonReveal');
+    PeltButton.classList.remove('hiddenButtonReveal');
+    WoodGatherButton.classList.remove('hiddenButtonReveal');
+    WoodGathered.classList.remove('hiddenButtonReveal');
+    ExitCraftingButton.classList.add('hiddenButtonReveal');
+}
+</script>
+<button id="ExitCraftingButton" onclick="CloseCraftingMenu()" class="hiddenButtonReveal button">X</button>
 <body class="mainmenu"> 
 
 <h2 id="starttext">Laboring Lodge</h2> 
@@ -202,7 +225,7 @@ let timeLeft = 10;
 <button id="PeltButton" onclick="Hunt()" class="button hiddenButtonReveal GatherButtons">Hunt</button>
 </div></div>
 <div class="relative5"><div class="absolute5">
-<button id="CraftingButton" onclick="CraftOpen()" class="hiddenButtonReveal button GatherButtons">Crafting</button>
+<button id="CraftingButton" onclick="OpenCraftingMenu()" class="hiddenButtonReveal button GatherButtons">Crafting</button>
 </div></div>
 <div class="relative1"> <div class="absolute1"> 
 <button id="WoodGatherButton" onclick="GatherWood()" class="button hiddenButtonReveal GatherButtons">Gather Wood</button> 
