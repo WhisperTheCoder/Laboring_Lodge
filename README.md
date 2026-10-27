@@ -6,3 +6,4 @@ I'm a little scared to implement the crafting system, it's going to be a lot of 
 <img width="414" height="414" alt="Screenshot 2026-09-17 1 50 20 PM" src="https://github.com/user-attachments/assets/ea31844c-16c5-4bd8-9233-cfc496f759b1" />
 </p>
 Just added the crafting menu, I needed a break because of lots of events and timing. I'm ready to continue the project after a well deserved break :3
+Oof, I took a long break from this project. At this point, Halloween is coming up and I've had little time to work on this due to all my schoolwork. But, I won't quit now. I may resume work soon.
